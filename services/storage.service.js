@@ -5,6 +5,11 @@ import { promises } from 'fs'
 
 const filePath = join(homedir(), 'weather-data.json');
 
+const TOKEN_DICTIONARY = {
+    token: 'token',
+    city: 'çity'
+};
+
 const saveKeyValue = async (key, value) => {
     let data = {};    
     if (await isExist(filePath)) {
@@ -33,7 +38,7 @@ const isExist = async (path) => {
 }
 };
 
-export { saveKeyValue, getKeyValue };
+export { saveKeyValue, getKeyValue, TOKEN_DICTIONARY };
 
 // const saveKeyValue = (key, value) => {
 //     console.log(basename(filePath));
